@@ -7,6 +7,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class Base {
 
@@ -22,6 +23,7 @@ public class Base {
 
         try {
             driver =  new IOSDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         } catch (Exception e) {
 
         }
