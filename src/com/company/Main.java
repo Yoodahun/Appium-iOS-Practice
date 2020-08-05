@@ -43,9 +43,12 @@ public class Main extends Base {
         System.out.println(
                 driver.findElementByName("DEFAULT").getAttribute("name")
         );
+        //print text
         System.out.println(
                 driver.findElementsByClassName("XCUIElementTypeStaticText").get(1).getText()
         );
+
+
 
 
 
