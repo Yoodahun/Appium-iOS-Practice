@@ -48,6 +48,13 @@ public class Main extends Base {
                 driver.findElementsByClassName("XCUIElementTypeStaticText").get(1).getText()
         );
 
+        driver.navigate().back();
+        driver.findElementByAccessibilityId("Picker View").click();
+
+        driver.findElementsByClassName("XCUIElementTypePickerWheel").get(0).sendKeys("55");
+        driver.findElementsByClassName("XCUIElementTypePickerWheel").get(1).sendKeys("220");
+        driver.findElementsByClassName("XCUIElementTypePickerWheel").get(2).sendKeys("130");
+
 
 
 
