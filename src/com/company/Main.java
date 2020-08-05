@@ -2,8 +2,10 @@ package com.company;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 import java.util.HashMap;
 
@@ -24,12 +26,26 @@ public class Main extends Base {
         //Scrolling
         driver = capabilities();
         Thread.sleep(3000);
-        IOSElement element = driver.findElementByClassName("XCUIElementTypeTable");
+        RemoteWebElement element = (RemoteWebElement)driver.findElement(By.className("XCUIElementTypeTable"));
         String elementID = element.getId();
         HashMap<String, String> scrollObject = new HashMap<String, String>();
-        scrollObject.put("element", elementID);
-        scrollObject.put("predicateString", "label == \"Search Bars\"");
+
+        scrollObject.put("direction", "down");
         driver.executeScript("mobile:scroll", scrollObject);
+
+        driver.findElementByAccessibilityId("Steppers").click();
+
+        driver.findElementsByAccessibilityId("Increment").get(0).click();
+        driver.findElementsByAccessibilityId("Increment").get(0).click();
+
+        driver.findElementsByAccessibilityId("Increment").get(1).click();
+
+        System.out.println(
+                driver.findElementByName("DEFAULT").getAttribute("name")
+        );
+        System.out.println(
+                driver.findElementsByClassName("XCUIElementTypeStaticText").get(1).getText()
+        );
 
 
 
