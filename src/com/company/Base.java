@@ -15,6 +15,7 @@ public class Base {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 8");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "safari");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
         // Give the app path
         capabilities.setCapability(MobileCapabilityType.APP, "/Users/yoodahun/Library/Developer/Xcode/DerivedData/UICatalog-effppdfezvunjcbqihlcghopzhgi/Build/Products/Debug-iphonesimulator/UICatalog.app");
