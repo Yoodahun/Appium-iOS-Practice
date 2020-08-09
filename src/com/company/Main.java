@@ -35,11 +35,13 @@ public class Main extends Base {
 
         driver.findElementByAccessibilityId("Steppers").click();
 
+        //Increment
         driver.findElementsByAccessibilityId("Increment").get(0).click();
         driver.findElementsByAccessibilityId("Increment").get(0).click();
 
         driver.findElementsByAccessibilityId("Increment").get(1).click();
 
+        //Static Text
         System.out.println(
                 driver.findElementByName("DEFAULT").getAttribute("name")
         );
@@ -51,6 +53,7 @@ public class Main extends Base {
         driver.navigate().back();
         driver.findElementByAccessibilityId("Picker View").click();
 
+        //Select Wheel Picker
         driver.findElementsByClassName("XCUIElementTypePickerWheel").get(0).sendKeys("55");
         driver.findElementsByClassName("XCUIElementTypePickerWheel").get(1).sendKeys("220");
         driver.findElementsByClassName("XCUIElementTypePickerWheel").get(2).sendKeys("130");
